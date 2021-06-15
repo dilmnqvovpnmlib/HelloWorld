@@ -9,16 +9,19 @@ RUN sed -i -e "s/^mirrorlist=http:\/\/mirrorlist.centos.org/#mirrorlist=http:\/\
 RUN yum update -y && \
     yum install -y gcc && \
     yum install -y glibc-static && \
-    yum install -y vim
+    yum install -y vim && \
+    yum install -y gdb && \
+    yum install -y git && \
+    yum install -y wget && \
+    yum install -y hexedit
 
 # Setting .bashrc
 RUN { \
     echo "alias ll='ls -l'"; \
     echo "alias la='ls -A'"; \
     echo "alias l='ls -CF'"; \
-    echo "alias o='objdump'"
-    echo "PS1='\[\e[1;34m\][\u@\h \W]\\$ \[\e[m\]'"; \
-  } > ~/.bashrc
+    echo "alias o='objdump'"; \
+    echo "PS1='\[\e[1;34m\][\u@\h \W]\\$ \[\e[m\]'";} > ~/.bashrc
 
 WORKDIR /app
 
