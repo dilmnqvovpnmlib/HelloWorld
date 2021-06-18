@@ -27,7 +27,7 @@ docker run --rm -it -v `pwd`:/app helloworld
 
 ## 章
 
-- [☓] 1 章
+- [x] 1 章
 - [ ] 2 章
 - [ ] 3 章
 - [ ] 4 章
